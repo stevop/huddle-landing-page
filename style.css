@@ -246,7 +246,7 @@ footer {
     justify-content: space-evenly;
   }
   .container--header {
-    padding: 5em 0;
+    padding: 5em 1em;
   }
   .container--main {
     gap: 0;
