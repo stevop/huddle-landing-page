@@ -15,6 +15,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    min-height: calc(100vh - 0.1px);
+    width: 100%;
+}
 
 body, p, small {
     font-family: "Open Sans", sans-serif;
@@ -27,9 +31,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HEADER */
 .container--header{
+    padding: 5em;
+    margin-bottom: 20em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     button{
         background-color: white;
         color: var(--pink);
@@ -54,31 +61,37 @@ main{
     align-items: center;
     gap: 6em;
 }
-
 .container--main{
+    // padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     h1{
-        font-size: 2.5em;
+        font-size: 5.5em;
         color: var(--very-dark-cyan);
         text-align: center;
+        margin-bottom: 1em;
     }
     p{
-        font-size: 1.5em;
+        max-width: 1200px;
+        font-size: 2em;
         text-align: center;
         line-height: 1.6;
         color: var(--very-dark-cyan);
+        margin-bottom: 1.5em;
+        margin-bottom: 3em;
     }
     button{
+        margin-bottom: 2em;
         background-color: var(--pink);
-        font-size: 1.5em;
+        font-size: 2em;
         border: none;
         color: white;
         font-weight: 600;
-        padding: .8em 1.5em;
+        padding: 1.5em 5em;
         border-radius: 2em;
+        box-shadow: 0 5px 10px #ccc;
         cursor: pointer;
         transition: background-color .5s ease-in-out;
         &:hover, &:focus{
@@ -86,7 +99,11 @@ main{
         }
     }
     img{
-        // width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    .icon{
+        width: fit-content;
         height: auto;
     }
     h2{
@@ -96,6 +113,7 @@ main{
     small{
         color: dimgray;
         font-size: 1.5em;
+        text-align: center;
     }
     h3{
         text-align: center;
@@ -107,6 +125,7 @@ main{
 footer{
     background-color: var(--very-dark-cyan);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     column-gap: 3em;
@@ -114,15 +133,36 @@ footer{
 
 .container--footer{
     margin-bottom: 3em;
+    padding: 5em;
     max-width: 750px;
     p{
         color: white;
         font-size: 1.5em;
+        font-weight: 600;
         text-align: left;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        line-height: 1.8;
     }
     ul{
         list-style: none;
         color: white;
+        li{
+            margin-bottom: 1em;
+            font-size: 1.325em;
+            transition: .5s color ease-in-out;
+            &:hover, &:focus{
+                cursor: pointer;
+                color: var(--light-pink);
+            }
+            img{
+                width: 1.5em;
+                margin-right: 1em;
+                &:hover, &:focus{
+                    cursor: pointer;
+                }
+            }
+        }
     }
     h4{
         color: white;
@@ -138,11 +178,9 @@ footer{
         width: 18em;
         height: 3em;
         border-radius: .325em;
-        margin-bottom: .5em;
-        // display: block;
+        margin-bottom: 1em;
     }
     input[type=button]{
-        // float: right;
         font-size: 1.5em;
         font-weight: 600;
         background-color: var(--pink);
@@ -173,5 +211,44 @@ footer{
     cursor: pointer;
     &:hover, &f:focus{
         color: var(--light-pink);
+    }
+}
+
+// MEDIA QUERRIES
+
+@media (min-width: 1500px){
+    footer{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (min-width: 2000px){
+    main{
+        gap: 16em;
+    }
+    .bq{
+        margin: 15em 0;
+    }
+    .grid-box{
+        margin: 3em auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-item-1{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .grid-item-3{
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .grid-item-7{
+        grid-row: 4;
+        grid-column: 2;
     }
 }
