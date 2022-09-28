@@ -18,6 +18,7 @@
 body {
   min-height: calc(100vh - 0.1px);
   width: 100%;
+  font-size: 100%;
 }
 
 body, p, small {
@@ -66,6 +67,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5em;
 }
 .container--main h1 {
   font-size: 5.5em;
@@ -99,6 +101,7 @@ main {
   background-color: var(--light-pink);
 }
 .container--main img {
+  margin-bottom: 5em;
   width: 100%;
   height: auto;
 }
@@ -124,6 +127,7 @@ main {
 
 footer {
   background-color: var(--very-dark-cyan);
+  margin-top: 15em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,7 +137,6 @@ footer {
 }
 
 .container--footer {
-  margin-bottom: 3em;
   padding: 5em;
   max-width: 750px;
 }
@@ -215,11 +218,45 @@ footer {
   color: var(--light-pink);
 }
 
+@media (max-width: 420px) {
+  body {
+    font-size: 50%;
+  }
+  body .grid-item {
+    margin: 12em 0;
+  }
+  body .container--main h1 {
+    font-size: 3.3em;
+  }
+  body .container--main button {
+    padding: 1.325em 2em;
+  }
+  body .container--main h2 {
+    font-size: 7em;
+  }
+  body .container--main small {
+    margin-bottom: 10em;
+  }
+  body footer {
+    display: block;
+  }
+}
+@media (max-width: 750px) {
+  header {
+    justify-content: space-evenly;
+  }
+  .container--header {
+    padding: 5em 0;
+  }
+  .container--main {
+    gap: 0;
+  }
+}
 @media (min-width: 1500px) {
   footer {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 }
